@@ -1,4 +1,6 @@
-Exports Issues from a specified repository to a CSV file
+Exports Issues from a specified repository to a CSV file.
+</p>
+Prints out the bug stats for: number of bugs, number of to fix, number of pending story, number of enhancement :5
 </p>
 Uses basic authentication (Github username + password) to retrieve Issues
 from a repository that username has access to.
