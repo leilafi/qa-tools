@@ -1,32 +1,16 @@
 """
-Exports Issues from a specified repository to a CSV file
+Exports Issues count from a specified repository
 Uses basic authentication (Github username + password) to retrieve Issues
 from a repository that username has access to.
 INSTUCTIONS:
 1. pip install requests
 2. replace GITHUB_USER with your username
 3. replace GITHUB_PASSWORD with your auth token (settings -> personal access tokens)
-4. run as "python export_issues.py"
-5. type --help for information about the parameters
+4. run as "python bugstats.py"
 """
+
 import csv
 import requests
-from optparse import OptionParser
-import json
-
-# parser = OptionParser()
-# args = parser.add_option("-s", "--state", dest="state", default="open", help="For know issues, leave it blank."
-#                                                                              "For fixed issues type closed")
-# args = parser.add_option("-d", "--since", dest="since", default="2016-01-01",
-#                          help="For known issues, leave it blank. "
-#                               "For fixed issues enter a date in YYYY-MM-DD format.")
-# args = parser.add_option("-l", "--label", dest="label", default="bug")
-# #args = parser.add_option("-r", "--report", dest="report", default="notreport", help="Generates a report of bug stats." )
-# (options, args) = parser.parse_args()
-# bugState = options.state
-# since = options.since
-# label = options.label
-#report = options.report
 
 since = '2016-01-01'
 bugState = 'open'
@@ -60,7 +44,7 @@ def main(label):
             if pages['next'] == pages['last']:
                 break
 
-    print 'number of %s issues %s :%d' %(bugState, label, count)
+    print 'number of %s :%d' %(label, count)
 
 
 def write_issues(response, csvout):
