@@ -18,8 +18,8 @@ bugState = 'open'
 
 def main(label):
     count = 0
-    GITHUB_USER = 'leila.firouz@red-badger.com'
-    GITHUB_PASSWORD = '2af029a70f0b6ed9d3e52ceea6eb98b5512d39b5'
+    GITHUB_USER = 'usr'
+    GITHUB_PASSWORD = 'pass'
     REPO = 'redbadger/ct-cms'  # format is username/repo
     ISSUES_FOR_REPO_URL = 'https://api.github.com/repos/%s/issues?state=%s&since=%s&labels=%s' % (REPO,bugState,since,label)
     AUTH = (GITHUB_USER, GITHUB_PASSWORD)
